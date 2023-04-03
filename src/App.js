@@ -1,62 +1,40 @@
+// REACT ROUTER DOM
+
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+
 // STYLE COMPONENTS
 
 import './App.css';
 import './components/Header/header.css';
-import MateCamionero from'./images/mate_camionero.jpg'
-import MateCalabaza from'./images/mate_calabaza.jpg'
-import MateCeramica from'./images/mate_ceramica.jpg'
-import MateMadera from'./images/mate_madera.jpg'
+
+// IMPORT PAGES
+
+import Contact from "./pages/Contact/contact";
+import Shop from "./pages/Shop/shop";
+import Home from "./pages/Home/home";
+import ProductDetail from "./pages/ProductDetail/productDetail";
 
 // FUNCTIONAL COMPONENTS
 
 import Header from './components/Header/header.js';
 import Navbar from './components/Navbar/navbar';
-import CardProduct from './components/CardProduct/cardProduct';
-
-
-
 
 // DOM
 
 const App = () => {
-  return (
-    <>
-    <Header />
-
-    <Navbar />
-
-    <div className='bodyCardProduct'>
-      <CardProduct 
-        name="Mate Camionero"
-        price="$5.500"
-        description="Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica"
-        img= {MateCamionero}
-      />
-      <CardProduct 
-        name="Mate Calabaza"
-        price="$6.500"
-        description="Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica"
-        img= {MateCalabaza}
-      />
-      <CardProduct 
-        name="Mate Ceramica"
-        price="$7.500"
-        description="Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica"
-        img= {MateCeramica}
-      />
-        <CardProduct 
-        name="Mate Madera"
-        price="$3.500"
-        description="Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica"
-        img= {MateMadera}
-      />
-    </div>
-
-    </>
+  return (    
+    <Router>
+      <div>
+        <Header className='resetcss' />
+        <Navbar />
+          <Routes>
+            <Route path="/"element={<Home/>}></Route>
+            <Route path="/contact"element={<Contact/>}></Route>
+            <Route path="/shop"element={<Shop/>}></Route>
+            <Route path="/product-detail/:id" element={<ProductDetail/>}></Route>
+          </Routes>
+        </div>
+    </Router>
     
   );
 };

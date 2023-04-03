@@ -1,0 +1,10 @@
+.shopStyle{
+    background-color: rgb(205, 255, 230);
+    height: 1200px;
+}
+
+.shopStyle .tittle{
+    color: rgb(77, 99, 81);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}

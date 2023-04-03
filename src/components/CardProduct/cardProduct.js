@@ -5,23 +5,24 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './cardProduct.css';
+/* import CardList from '../CardList/cardList'; */
 
-const CardProduct = ({img, name, price, description}) => {
+const CardProduct = ({product}) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, maxHight: 200}}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="150"
-          image={img}
-          alt={name}
+          height="140"
+          image={product.img}
+          alt={product.name}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {name}{price}
+            {product.name} 
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+          $ {product.price}
           </Typography>
         </CardContent>
       </CardActionArea>

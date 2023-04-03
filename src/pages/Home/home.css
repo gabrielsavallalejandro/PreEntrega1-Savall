@@ -1,0 +1,25 @@
+.homeStyle{
+    background-color: rgb(205, 255, 230);
+    height: 800px;
+}
+
+.homeStyle .tittlestyle{
+    color: rgb(77, 99, 81);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.video{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.paragraph{
+    text-align: justify;
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 20px;
+    color: rgb(94, 94, 94);
+}

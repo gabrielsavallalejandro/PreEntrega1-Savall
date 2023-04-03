@@ -1,0 +1,94 @@
+{
+    "shop":[
+        { 
+            "name": "Mate camionero", 
+            "price": 3500, 
+            "id": 1, 
+            "img": "./images/mate_camionero.jpg"
+        },
+        { 
+            "name": "Mate de calabaza", 
+            "price": 3200, 
+            "id": 2,
+            "img": "./images/mate_calabaza.jpg"
+        },
+        { 
+            "name": "Mate de madera", 
+            "price": 3800,
+            "id": 3,
+            "img": "./images/mate_madera.jpg"
+        },
+        { 
+            "name": "Mate de ceramica", 
+            "price": 6500, 
+            "id": 4,
+            "img": "./images/mate_ceramica.jpg"
+        },
+        { 
+            "name": "Bombilla ace. quirurjico", 
+            "price": 2000, 
+            "id": 5,
+            "img": "./images/bombilla_acero_quirurjico.jpg"
+        },
+        { 
+            "name": "Bombilla ace. inox.", 
+            "price": 3000, 
+            "id": 6,
+            "img": "./images/bombilla_acero_inoxidable.jpg"
+        },
+        { 
+            "name": "Bombilla alpaca", 
+            "price": 4000, 
+            "id": 7,
+            "img": "./images/bombilla_alpaca.jpg"
+        },
+        { 
+            "name": "Bombilla de colores", 
+            "price": 900, 
+            "id": 8,
+            "img": "./images/bombilla_colores.jpg"
+        },
+        { 
+            "name": "Yerba organica 500gr", 
+            "price": 3500, 
+            "id": 9,
+            "img": "./images/yerba_organica"
+        },
+        { 
+            "name": "Yerba Mañanita 1kg", 
+            "price": 1000, 
+            "id": 10,
+            "img": "./images/yerba_mañanita"
+        },
+        { 
+            "name": "Yerba Playadito", 
+            "price": 1050, 
+            "id": 11,
+            "img": "./images/yerba_playadito"
+        },
+        { 
+            "name": "Yerba Amanda", 
+            "price": 1000, 
+            "id": 12,
+            "img": "./images/yerba_amanda"
+        },
+        { 
+            "name": "Bolso matero", 
+            "price": 6500, 
+            "id": 13,
+            "img": "./images/bolso_matero.jpg"
+        },
+        { 
+            "name": "Termo Lumilagro acero", 
+            "price": 12000, 
+            "id": 14,
+            "img": "./images/termo_acero.jpg"
+        },
+        { 
+            "name": "Termo Lumilagro vidrio", 
+            "price": 10000, 
+            "id": 15,
+            "img":  "./images/termo_vidrio.jpg"
+        }
+    ]
+}

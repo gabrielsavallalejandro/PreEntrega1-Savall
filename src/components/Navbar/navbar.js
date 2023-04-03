@@ -1,29 +1,26 @@
+// IMPORT "LINK" FROM REACT ROUTER DOM
+
+import { Link } from 'react-router-dom';
+
 // IMPORT STYLE
 import './navbar.css';
 
 // IMPORT COMPONENT
 
-import Shop from '../Shop/shop'
+import Cart from '../Cart/Cart';
 
 // CREATE YOUR COMPONENT
 
 const Navbar = () => {
     return (
-    <div className='bodyNavbar'>
-        <li className='styleListNavbar'></li>
-            <a href='index.js' className='styleAHrefNavbar'>Home</a> 
-        <li className='styleListNavbar'></li>
-            <a href='index.js' className='styleAHrefNavbar'>Mates</a> 
-        <li className='styleListNavbar'></li>
-            <a href='index.js' className='styleAHrefNavbar'>Bombillas</a> 
-        <li className='styleListNavbar'></li>
-            <a href='index.js' className='styleAHrefNavbar'>Termos</a> 
-        <li className='styleListNavbar'></li>
-            <a href='index.js' className='styleAHrefNavbar'>Otros</a>  
-        <li className='styleListNavbar'>  
-            <Shop />
+    <nav className='bodyNavbar'>
+        <Link className='styleListNavbar'to="/">Home</Link>
+        <Link className='styleListNavbar'to="/shop">Shop</Link>
+        <Link className='styleListNavbar'to="/contact">Contact</Link>
+        <li className='styleShopIcon'>  
+            <Cart />
         </li>
-    </div>
+    </nav>
     );
   };
 
