@@ -10,8 +10,13 @@ import CardList from '../../components/CardList/cardList'
 const Shop = () => {
   return (
     <div className='shopStyle'>
-      <h1 className='tittle'>Catalogo</h1>
-      <CardList/>
+      <div className='shopTittleContainer'>
+      <h1 className='tittlestyle'>Renova tu kit matero</h1>
+      </div>
+      <section>
+        <CardList/>
+      </section>
+      
     </div>
   )
 }

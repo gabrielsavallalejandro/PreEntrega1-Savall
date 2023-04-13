@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 // Import Componentes
 
-import CardProduct from '../../components/CardProduct/cardProduct';
 
 // Import Style
 
@@ -30,9 +29,10 @@ const ProductDetail = () => {
 
   return (
     <div className='style'>
-      <h1 className='tittle'>{product.name}</h1>
-      <div>
-        <CardProduct product={product} className='cardStyle'/>
+      <h1 className='tittlestyle'>{product.name}</h1>
+      <div className='imageProductContainer'>
+      <img className='picture' src={product.img} alt= {product.name} width={350}/>  
+      <p className='description'>{product.name}</p>
       </div>
         
     </div>

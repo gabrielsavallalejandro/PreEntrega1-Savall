@@ -1,7 +1,6 @@
 .style{
     width: 100%;
-    height: 500px;
-    background-color: rgb(205, 255, 230);
+    height: 800px;
 
 }
 
@@ -11,3 +10,25 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+.imageProductContainer{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    gap: 20px;
+    grid-template-areas:"picture" "description";
+    
+}
+
+.tittlestyle{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.picture{
+    grid-area: picture;
+    margin-left: 10px;
+    
+}

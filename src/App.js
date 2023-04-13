@@ -2,6 +2,7 @@
 
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
+
 // STYLE COMPONENTS
 
 import './App.css';
@@ -18,7 +19,6 @@ import ProductDetail from "./pages/ProductDetail/productDetail";
 
 import Header from './components/Header/header.js';
 import Navbar from './components/Navbar/navbar';
-
 // DOM
 
 const App = () => {
