@@ -1,7 +1,7 @@
 import React from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-// IMPORT STYLE
+// IMPORT COMPONENTS
 
 
 const Cart = () => {

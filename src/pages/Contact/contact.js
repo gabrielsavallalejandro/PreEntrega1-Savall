@@ -11,8 +11,7 @@ const Contact = () => {
     <div className='contactStyle'>
       <h1 className='tittlestyle'>Contactanos</h1>
       <div className='formStyle'>
-
-      </div>
+    </div>
     </div>
   )
 }

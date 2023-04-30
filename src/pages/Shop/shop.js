@@ -4,17 +4,20 @@ import React from 'react'
 
 import './shop.css'
 
+//IMPORT CONTEXT
+
 // FUNCTIONAL COMPONENTS
-import CardList from '../../components/CardList/cardList'
+import ItemList from '../../components/ItemList/ItemList'
 
 const Shop = () => {
+
   return (
     <div className='shopStyle'>
       <div className='shopTittleContainer'>
-      <h1 className='tittlestyle'>Renova tu kit matero</h1>
+      <h1 className='tittlestyle'> ~RENOVA TU KIT MATERO~</h1>
       </div>
       <section>
-        <CardList/>
+        <ItemList/>
       </section>
       
     </div>

@@ -13,29 +13,39 @@ import './components/Header/header.css';
 import Contact from "./pages/Contact/contact";
 import Shop from "./pages/Shop/shop";
 import Home from "./pages/Home/home";
-import ProductDetail from "./pages/ProductDetail/productDetail";
+import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
+import CategoriesItem from "./pages/CategoriesItems/CategoriesItems";
 
 // FUNCTIONAL COMPONENTS
 
 import Header from './components/Header/header.js';
 import Navbar from './components/Navbar/navbar';
+
+// IMPORT CONTEXT
+
+import ShopContextProvider from "./context/ShopContext";
+import ItemDetail from "./components/ItemDetail/itemDetail";
+
 // DOM
 
 const App = () => {
-  return (    
-    <Router>
-      <div>
-        <Header className='resetcss' />
-        <Navbar />
-          <Routes>
-            <Route path="/"element={<Home/>}></Route>
-            <Route path="/contact"element={<Contact/>}></Route>
-            <Route path="/shop"element={<Shop/>}></Route>
-            <Route path="/product-detail/:id" element={<ProductDetail/>}></Route>
-          </Routes>
-        </div>
-    </Router>
-    
+  return (
+    <ShopContextProvider>
+      <Router>
+        <div>
+          <Header className='resetcss' />
+          <Navbar />
+            <Routes>
+              <Route path="/"element={<Shop/>}></Route>
+              <Route path="/contact"element={<Contact/>}></Route>
+              <Route path="/home"element={<Home/>}></Route>
+              <Route path="/item-detail/:id" element={<ItemDetail/>}></Route>
+              <Route path="/item-categorie/:categorie" element={<CategoriesItem/>}/>
+              <Route path="/cart" element={<ShoppingCart/>}></Route>
+            </Routes>
+          </div>
+      </Router>
+    </ShopContextProvider>     
   );
 };
 
