@@ -22,15 +22,14 @@ import Header from './components/Header/header.js';
 import Navbar from './components/Navbar/navbar';
 
 // IMPORT CONTEXT
-
-import ShopContextProvider from "./context/ShopContext";
+import { CartProvider } from "./context/CartContext";
 import ItemDetail from "./components/ItemDetail/itemDetail";
 
 // DOM
 
 const App = () => {
   return (
-    <ShopContextProvider>
+    <CartProvider>
       <Router>
         <div>
           <Header className='resetcss' />
@@ -45,7 +44,8 @@ const App = () => {
             </Routes>
           </div>
       </Router>
-    </ShopContextProvider>     
+    </CartProvider>
+
   );
 };
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 
 // Import useParams
 
@@ -22,18 +22,27 @@ import ItemList from '../ItemList/ItemList'
 
 import './itemDetail.css';
 
+// IMPORT CONTEXT
+
+import { CartContext } from '../../context/CartContext';
+
 // Import Firebase
 
 import { db } from '../../firebaseConfig/firebaseConfig';
 import { collection, query, getDocs, where, documentId } from "firebase/firestore";
 
+
 //DOM
 
 const ItemDetail = () => {
 
+   // Trae el itemCart creado en el contexto para poder usartlo.
+
+   const {itemCart} = useContext (CartContext);
+
+
   //______________________Function for add to cart______________________________________
 
-    
 
 
 
@@ -43,6 +52,8 @@ const ItemDetail = () => {
 
   //____________________________________________________
 
+
+  console.log(itemCart);
 
 
   let { id } = useParams();
@@ -93,7 +104,7 @@ const ItemDetail = () => {
               </Card>
 
               <button style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Agregar al carrito</button>
-                <button style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Quitar al carrito</button>
+              <button style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Quitar al carrito</button>
           </div>
         </div>
         );
