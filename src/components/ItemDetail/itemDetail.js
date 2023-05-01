@@ -37,24 +37,40 @@ import { collection, query, getDocs, where, documentId } from "firebase/firestor
 
 const ItemDetail = () => {
 
-   // Trae el itemCart creado en el contexto para poder usartlo.
+   // Trae el itemCart creado en el contexto para poder usarlo.
 
    const {itemCart} = useContext (CartContext);
+ 
 
 
-  //______________________Function for add to cart______________________________________
-  
+   //Trae los items del firebase
 
-  //______________________Function for remove to cart______________________________________
-
-
-
-
-
-  
   let { id } = useParams();
 
   const [item, setItem] = useState([]);
+
+ /* Funcionalidad boton Agregar al Carrito */
+  /*let buttonAgregarAlCarrito = document.getElementById("addToCart")
+  buttonAgregarAlCarrito.addEventListener("click",function(e){
+  buttonAgregarAlCarrito.setAttribute("id",producto.id);
+ let agregarProducto = listaDeProductos.find(function(producto){
+ return producto.id == e.target.id})
+ carrito.push(agregarProducto);
+ localStorage.setItem("Carrito",JSON.stringify(carrito)); // Agrega el producto al carrito del Local Storage
+ console.log(agregarProducto);
+ if (buttonAgregarAlCarrito){
+     Swal.fire({
+         position: 'center',
+         icon: 'success',
+         title: 'Producto añadido al carrito',
+         showConfirmButton: false,
+         timer: 1500
+     })
+ }
+ })*/
+
+
+//____________________________
 
   //Trae el item cuyo ID COINCIDE CON LO QUE ESTOY OBTENIENDO VIA useParams()
   const q = query(collection(db,"items"), where(documentId(), "==", id));
@@ -75,7 +91,6 @@ const ItemDetail = () => {
   }, [])
 
 
-  console.log(itemCart);
  
   return (
     <div className='containerItemDetail' style={{display:'flex', justifyContent:'center'}}>
@@ -101,7 +116,7 @@ const ItemDetail = () => {
                 </CardActionArea>
               </Card>
 
-              <button style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Agregar al carrito</button>
+              <button id='addToCart' style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Agregar al carrito</button>
               <button style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Quitar al carrito</button>
           </div>
         </div>

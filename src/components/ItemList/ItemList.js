@@ -45,8 +45,6 @@ const ItemList = () => {
                 <Link style={{textDecoration:'none'}} to={`/item-detail/${item.id}`}>
                 <CardItems data={item}/>
                 </Link>
-
-
            </div>
         )
       })}

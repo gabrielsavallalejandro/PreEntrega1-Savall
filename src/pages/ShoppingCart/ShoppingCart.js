@@ -1,12 +1,12 @@
 import React from 'react'
 
-import ItemCart from '../../components/ItemCart/ItemCart'
+
+import ItemDetail from '../../components/ItemDetail/itemDetail'
 
 const ShoppingCart = () => {
   return (
     <div>
-      <h1>Soy ShoppingCart de Pages</h1>
-      <ItemCart/>
+      <h1>Carrito de compras</h1>
     </div>
   )
 }
