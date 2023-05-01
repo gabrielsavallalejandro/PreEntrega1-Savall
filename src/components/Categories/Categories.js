@@ -11,8 +11,9 @@ const CategoriesItem = () => {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (event) => {
     setAnchorEl(null);
+    event.stopPropagation();
   };
 
   const styles = {
@@ -43,7 +44,7 @@ const CategoriesItem = () => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <span style={styles.upperText}>C</span>ategories
+        <span style={styles.upperText}>C</span>ategorias
       </Button>
       <Menu
         id="basic-menu"

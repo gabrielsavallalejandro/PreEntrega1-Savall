@@ -29,23 +29,22 @@ import ItemDetail from "./components/ItemDetail/itemDetail";
 
 const App = () => {
   return (
-    <CartProvider>
       <Router>
-        <div>
-          <Header className='resetcss' />
-          <Navbar />
-            <Routes>
-              <Route path="/"element={<Shop/>}></Route>
-              <Route path="/contact"element={<Contact/>}></Route>
-              <Route path="/home"element={<Home/>}></Route>
-              <Route path="/item-detail/:id" element={<ItemDetail/>}></Route>
-              <Route path="/item-categorie/:categorie" element={<CategoriesItem/>}/>
-              <Route path="/cart" element={<ShoppingCart/>}></Route>
-            </Routes>
-          </div>
+        <CartProvider>
+          <div>
+            <Header className='resetcss' />
+            <Navbar />
+              <Routes>
+                <Route path="/"element={<Shop/>}></Route>
+                <Route path="/contact"element={<Contact/>}></Route>
+                <Route path="/home"element={<Home/>}></Route>
+                <Route path="/item-detail/:id" element={<ItemDetail/>}></Route>
+                <Route path="/item-categorie/:categorie" element={<CategoriesItem/>}/>
+                <Route path="/cart" element={<ShoppingCart/>}></Route>
+              </Routes>
+            </div>
+          </CartProvider>
       </Router>
-    </CartProvider>
-
   );
 };
 

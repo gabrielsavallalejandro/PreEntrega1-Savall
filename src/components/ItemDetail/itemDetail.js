@@ -32,6 +32,7 @@ import { db } from '../../firebaseConfig/firebaseConfig';
 import { collection, query, getDocs, where, documentId } from "firebase/firestore";
 
 
+
 //DOM
 
 const ItemDetail = () => {
@@ -42,20 +43,15 @@ const ItemDetail = () => {
 
 
   //______________________Function for add to cart______________________________________
-
-
-
+  
 
   //______________________Function for remove to cart______________________________________
 
 
 
-  //____________________________________________________
 
 
-  console.log(itemCart);
-
-
+  
   let { id } = useParams();
 
   const [item, setItem] = useState([]);
@@ -78,6 +74,8 @@ const ItemDetail = () => {
 
   }, [])
 
+
+  console.log(itemCart);
  
   return (
     <div className='containerItemDetail' style={{display:'flex', justifyContent:'center'}}>

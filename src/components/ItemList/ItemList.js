@@ -37,49 +37,6 @@ const ItemList = () => {
 
   }, [])
 
-//_________________________________________________________________________________________________
-  
-  //Logica del carrito de compras
-
-  let cart = []
-
-  function addToCart(product) {
-    const existingCartItem = items.find(item => items.id === product.id);
-    if (existingCartItem) {
-      setItems(
-        items.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
-          cart.push(product),
-          console.log(cart)
-        )
-      );
-    } else {
-      setItems([...items, { ...product, quantity: 1 }]);
-    }
-  }
-
-  function removeFromCart(product) {
-    const existingCartItem = items.find(item => item.id === product.id);
-    if (existingCartItem.quantity === 1) {
-      setItems(items.filter(item => item.id !== product.id));
-    } else {
-      setItems(
-        items.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity - 1 } : item
-        )
-      );
-    }
-  }
-
-  function calculateTotal() {
-    return items.reduce((total, item) => total + item.price * item.quantity, 0);
-  }
-
-
-  
- 
-
-
   return (
     <div className='cardListStyle'>
         {items.map(item =>{
