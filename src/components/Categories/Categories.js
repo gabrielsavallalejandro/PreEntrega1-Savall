@@ -44,7 +44,7 @@ const CategoriesItem = () => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <span style={styles.upperText}>C</span>ategorias
+        <Link style={{textDecoration:'none', color:'white', fontSize:'35px'}} to={'/'}><span style={styles.upperText}>S</span>hop</Link>
       </Button>
       <Menu
         id="basic-menu"

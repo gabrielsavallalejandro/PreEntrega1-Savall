@@ -10,10 +10,9 @@ import './components/Header/header.css';
 
 // IMPORT PAGES
 
-import Contact from "./pages/Contact/contact";
 import Shop from "./pages/Shop/shop";
 import Home from "./pages/Home/home";
-import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
+import ConfirmShopCart from "./pages/ConfirmShopCart/confirmShopCart";
 import CategoriesItem from "./pages/CategoriesItems/CategoriesItems";
 
 // FUNCTIONAL COMPONENTS
@@ -36,11 +35,10 @@ const App = () => {
             <Navbar />
               <Routes>
                 <Route path="/"element={<Shop/>}></Route>
-                <Route path="/contact"element={<Contact/>}></Route>
                 <Route path="/home"element={<Home/>}></Route>
                 <Route path="/item-detail/:id" element={<ItemDetail/>}></Route>
                 <Route path="/item-categorie/:categorie" element={<CategoriesItem/>}/>
-                <Route path="/cart" element={<ShoppingCart/>}></Route>
+                <Route path="/cart" element={<ConfirmShopCart/>}></Route>
               </Routes>
             </div>
           </CartProvider>

@@ -3,7 +3,9 @@ import './cardList.css';
 
 //Import Components
 
-import CardItems from '../ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+
+
 
 //Import React Router Dom
 
@@ -37,13 +39,14 @@ const ItemList = () => {
 
   }, [])
 
+
   return (
     <div className='cardListStyle'>
-        {items.map(item =>{
+        {items.map(data =>{
         return(
-            <div key={item.id}>
-                <Link style={{textDecoration:'none'}} to={`/item-detail/${item.id}`}>
-                <CardItems data={item}/>
+            <div key={data.id}>
+                <Link style={{textDecoration:'none'}} to={`/item-detail/${data.id}`}>
+                <ItemDetailContainer data={data} key={data.id} />
                 </Link>
            </div>
         )

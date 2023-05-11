@@ -5,6 +5,10 @@ import { useParams } from "react-router-dom";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "../../firebaseConfig/firebaseConfig";
 
+//Import React Router Dom
+
+import { Link } from "react-router-dom";
+
 import ItemDetailContainer from "../../components/ItemDetailContainer/ItemDetailContainer";
 
 
@@ -37,7 +41,10 @@ const CategoriesItem = () => {
       style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr', gap: '20px', padding:'10px'}}
     >
       {categorieData.map((data) => {
-        return <ItemDetailContainer data={data} key={data.id} />;
+        return(
+        <Link style={{textDecoration:'none'}} to={`/item-detail/${data.id}`}>
+          <ItemDetailContainer data={data} key={data.id} />
+        </Link>) 
       })}
     </div>
     </div>

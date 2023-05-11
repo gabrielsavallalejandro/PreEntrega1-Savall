@@ -32,7 +32,6 @@ import { db } from '../../firebaseConfig/firebaseConfig';
 import { collection, query, getDocs, where, documentId } from "firebase/firestore";
 
 
-
 //DOM
 
 const ItemDetail = () => {
@@ -40,6 +39,8 @@ const ItemDetail = () => {
    // Trae el itemCart creado en el contexto para poder usarlo.
 
    const {itemCart} = useContext (CartContext);
+
+
  
 
 
@@ -49,25 +50,28 @@ const ItemDetail = () => {
 
   const [item, setItem] = useState([]);
 
- /* Funcionalidad boton Agregar al Carrito */
-  /*let buttonAgregarAlCarrito = document.getElementById("addToCart")
-  buttonAgregarAlCarrito.addEventListener("click",function(e){
-  buttonAgregarAlCarrito.setAttribute("id",producto.id);
- let agregarProducto = listaDeProductos.find(function(producto){
- return producto.id == e.target.id})
- carrito.push(agregarProducto);
- localStorage.setItem("Carrito",JSON.stringify(carrito)); // Agrega el producto al carrito del Local Storage
- console.log(agregarProducto);
- if (buttonAgregarAlCarrito){
-     Swal.fire({
-         position: 'center',
-         icon: 'success',
-         title: 'Producto añadido al carrito',
-         showConfirmButton: false,
-         timer: 1500
-     })
- }
- })*/
+
+
+
+
+  const addToCart = () => {
+    item.map(item => {
+      itemCart.push(item)
+      alert(`Agregaste ${item.name} al carrito`)
+      
+    })
+
+    console.log(itemCart);    
+  }
+ // Falta modificar formula de removeToCart --> Agregarle que identifique el elemento a borrar por medio de indexof
+  const removeToCart = () => {
+    item.map(item => {
+      itemCart.splice(item)
+      alert(`Quitaste ${item.name} al carrito`)
+      // puedo hacer un mapeo que me traiga el arreglo con todos los valores y que elimine el actual solamente. 
+    })
+  }
+  
 
 
 //____________________________
@@ -116,8 +120,8 @@ const ItemDetail = () => {
                 </CardActionArea>
               </Card>
 
-              <button id='addToCart' style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Agregar al carrito</button>
-              <button style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Quitar al carrito</button>
+              <button onClick={addToCart} style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Agregar al carrito</button>
+              <button onClick={removeToCart} style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Quitar al carrito</button>
           </div>
         </div>
         );
