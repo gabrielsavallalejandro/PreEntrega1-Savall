@@ -1,15 +1,11 @@
-.homeStyle{
-    height: 800px;
-    background-color: white;
+.shopStyle{
+    height: 1200px;
 }
 
-.tittlestyleContainer{
-    background-color: rgba(159, 233, 149, 0.37);
+.shopTittleContainer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 .tittlestyle{
     color: black;
@@ -17,53 +13,5 @@
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 5px;
-}
-
-.containerImageBanner{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-}
-
-.banner{
-    margin-left: 10%;
-    margin-top: 10px;
-}
-
-.video{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-.paragraph{
-    text-align: justify;
-    margin-top: 30px;
     font-style: italic;
-    font-size: 20px;
-    color: rgb(94, 94, 94);
-}
-.paragraph{
-    line-height: 200%;
-    margin-left: 5px;
-    color: black;
-    margin-right: 10px;
-}
-
-.containerImage{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-}
-.newsImage{
-    border-style: solid;
-    color: rgb(204, 200, 200);
-
 }

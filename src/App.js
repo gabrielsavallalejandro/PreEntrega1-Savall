@@ -10,8 +10,8 @@ import './components/Header/header.css';
 
 // IMPORT PAGES
 
-import Shop from "./pages/Shop/shop";
-import Home from "./pages/Home/home";
+import Home from "./pages/Home/Home";
+import News from "./pages/News/news";
 import ConfirmShopCart from "./pages/ConfirmShopCart/confirmShopCart";
 import CategoriesItem from "./pages/CategoriesItems/CategoriesItems";
 
@@ -34,8 +34,8 @@ const App = () => {
             <Header className='resetcss' />
             <Navbar />
               <Routes>
-                <Route path="/"element={<Shop/>}></Route>
-                <Route path="/home"element={<Home/>}></Route>
+                <Route path="/"element={<Home/>}></Route>
+                <Route path="/home"element={<News/>}></Route>
                 <Route path="/item-detail/:id" element={<ItemDetail/>}></Route>
                 <Route path="/item-categorie/:categorie" element={<CategoriesItem/>}/>
                 <Route path="/cart" element={<ConfirmShopCart/>}></Route>
