@@ -6,17 +6,7 @@ import { useParams } from 'react-router-dom';
 
 //Import MUI CARD
 
-
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-
-// Import Componentes
-
-import ItemList from '../ItemList/ItemList'
-
+import{Card,CardContent,CardMedia,Typography,CardActionArea} from "@mui/material";
 
 // Import Style
 
@@ -40,19 +30,11 @@ const ItemDetail = () => {
 
    const {itemCart} = useContext (CartContext);
 
-
- 
-
-
    //Trae los items del firebase
 
   let { id } = useParams();
 
   const [item, setItem] = useState([]);
-
-
-
-
 
   const addToCart = () => {
     item.map(item => {
@@ -63,16 +45,6 @@ const ItemDetail = () => {
 
     console.log(itemCart);    
   }
- // Falta modificar formula de removeToCart --> Agregarle que identifique el elemento a borrar por medio de indexof
-  const removeToCart = () => {
-    item.map(item => {
-      itemCart.splice(item)
-      alert(`Quitaste ${item.name} al carrito`)
-      // puedo hacer un mapeo que me traiga el arreglo con todos los valores y que elimine el actual solamente. 
-    })
-  }
-  
-
 
 //____________________________
 
@@ -94,7 +66,6 @@ const ItemDetail = () => {
 
   }, [])
 
-
  
   return (
     <div className='containerItemDetail' style={{display:'flex', justifyContent:'center'}}>
@@ -102,7 +73,7 @@ const ItemDetail = () => {
         return (
           <div key={item.id}>           
           <div className='itemContainer' style={{padding:'10px'}}>
-            <Card Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -120,8 +91,7 @@ const ItemDetail = () => {
                 </CardActionArea>
               </Card>
 
-              <button onClick={addToCart} style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Agregar al carrito</button>
-              <button onClick={removeToCart} style={{marginLeft:'5px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Quitar al carrito</button>
+              <button onClick={addToCart} style={{marginLeft:'100px',marginTop:'10px', marginRight:'10px', height:'30px', width:'125px',background:'black',color:'white'}}>Agregar al carrito</button>
           </div>
         </div>
         );

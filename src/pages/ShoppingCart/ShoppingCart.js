@@ -1,14 +1,20 @@
 import React from 'react'
 import { CartContext } from '../../context/CartContext'
-import Cart from '../../components/Cart/Cart'
+
+//Import Component
+
+import ConfirmShop from '../../components/ConfirmShop/confirmShop'
+import ItemCart from '../../components/ItemCart/ItemCart'
 
 
 const ShoppingCart = () => {
   return (
-    <div>
-      <Cart/>
-    </div>
-  )
+  <>
+    <ItemCart/>
+    <ConfirmShop/>
+  </>
+
+)
 }
 
 export default ShoppingCart;

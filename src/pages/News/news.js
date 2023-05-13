@@ -25,7 +25,7 @@ const News = () => {
       </div>
 
       <div className='video'>
-      <iframe width="900" height="506" src="https://www.youtube.com/embed/vwrmTSMmcaI" title="➤ COMO PREPARAR un MATE (CEBAR)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="900" height="506" src="https://www.youtube.com/embed/vwrmTSMmcaI" title="➤ COMO PREPARAR un MATE (CEBAR)"  ></iframe>
       </div>
 
       <section className='paragraph'>

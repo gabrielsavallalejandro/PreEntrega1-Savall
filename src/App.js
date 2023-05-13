@@ -1,12 +1,11 @@
 // REACT ROUTER DOM
 
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // STYLE COMPONENTS
 
-import './App.css';
-import './components/Header/header.css';
+import "./App.css";
+import "./components/Header/header.css";
 
 // IMPORT PAGES
 
@@ -17,33 +16,38 @@ import CategoriesItem from "./pages/CategoriesItems/CategoriesItems";
 
 // FUNCTIONAL COMPONENTS
 
-import Header from './components/Header/header.js';
-import Navbar from './components/Navbar/navbar';
+import Header from "./components/Header/header.js";
+import Navbar from "./components/Navbar/navbar";
+import ItemDetail from "./components/ItemDetail/itemDetail";
+import ShoppingCart from "./pages/ShoppingCart/ShoppingCart";
 
 // IMPORT CONTEXT
 import { CartProvider } from "./context/CartContext";
-import ItemDetail from "./components/ItemDetail/itemDetail";
+
 
 // DOM
 
 const App = () => {
   return (
-      <Router>
-        <CartProvider>
-          <div>
-            <Header className='resetcss' />
-            <Navbar />
-              <Routes>
-                <Route path="/"element={<Home/>}></Route>
-                <Route path="/home"element={<News/>}></Route>
-                <Route path="/item-detail/:id" element={<ItemDetail/>}></Route>
-                <Route path="/item-categorie/:categorie" element={<CategoriesItem/>}/>
-                <Route path="/cart" element={<ConfirmShopCart/>}></Route>
-              </Routes>
-            </div>
-          </CartProvider>
-      </Router>
+    <Router>
+      <CartProvider>
+        <div>
+          <Header className="resetcss" />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/News" element={<News />}></Route>
+            <Route path="/item-detail/:id" element={<ItemDetail />}></Route>
+            <Route
+              path="/item-categorie/:categorie"
+              element={<CategoriesItem />}
+            ></Route>
+            <Route path="/ShoppingCart" element={<ShoppingCart />}></Route>
+          </Routes>
+        </div>
+      </CartProvider>
+    </Router>
   );
 };
 
-export default App
+export default App;

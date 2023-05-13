@@ -1,7 +1,11 @@
 import { TextField } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
-// Import component
+// IMPORT CONTEXT
+
+import { CartContext } from "../../context/CartContext";
+
+import ItemCart from "../ItemCart/ItemCart";
 
 
 //Firebase
@@ -18,43 +22,47 @@ import { Formik } from "formik";
 // Import Styles
 
 import "./confirmShop.css";
-import { green } from "@mui/material/colors";
 
 
 
 const ConfirmShop = () => {
+  const { itemCart } = useContext(CartContext);
 
-   const [purchaseID, setPurchaseID]  = useState("");
+  const [purchaseID, setPurchaseID] = useState("");
 
-const yupSchema = yup.object({
-  name: yup.string().min(2, "Valor minimo dos caracteres").max(20).required(""),
-  lastName: yup
-    .string()
-    .min(2, "Valor minimo dos caracteres")
-    .max(20)
-    .required(""),
-  email: yup.string().email("ejemplo@ejemplo.com").required(""),
-});
-
-const submitHandler = async (values, resetForm) => {
-  // Add a new document with a generated id.
-  const docRef = await addDoc(collection(db, "purchase"), {
-    values
+  const yupSchema = yup.object({
+    name: yup
+      .string()
+      .min(2, "Valor minimo dos caracteres")
+      .max(20)
+      .required(""),
+    lastName: yup
+      .string()
+      .min(2, "Valor minimo dos caracteres")
+      .max(20)
+      .required(""),
+    email: yup.string().email("ejemplo@ejemplo.com").required(""),
   });
-  console.log("Document written with ID: ", docRef.id);
 
-  setPurchaseID(docRef.id);
+  const submitHandler = async (values, resetForm) => {
+    // Add a new document with a generated id.
+    const docRef = await addDoc(collection(db, "purchase"), {
+      values,
+    });
+    console.log("Document written with ID: ", docRef.id);
 
-  console.log(values);
-  resetForm();
-};
+    setPurchaseID(docRef.id);
 
-const initialValues = {
-  name: "",
-  lastName: "",
-  email: "",
-}; 
-   
+    console.log(values);
+    resetForm();
+  };
+
+  const initialValues = {
+    name: "",
+    lastName: "",
+    email: "",
+  };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -105,10 +113,12 @@ const initialValues = {
           >
             Confirmar
           </button>
-            {purchaseID.length ? <p style={{color:'green', paddingTop:'10px'}}>Gracias por su compra, su número de tiket es: {purchaseID}</p> : null}
-          
+          {purchaseID.length ? (
+            <p style={{ color: "green", paddingTop: "10px" }}>
+              Gracias por su compra, su número de tiket es: {purchaseID}
+            </p>
+          ) : null}
         </form>
-
       )}
     </Formik>
   );

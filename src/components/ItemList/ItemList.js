@@ -46,7 +46,7 @@ const ItemList = () => {
         return(
             <div key={data.id}>
                 <Link style={{textDecoration:'none'}} to={`/item-detail/${data.id}`}>
-                <ItemDetailContainer data={data} key={data.id} />
+                  <ItemDetailContainer data={data} key={data.id} />
                 </Link>
            </div>
         )

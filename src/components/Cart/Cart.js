@@ -12,13 +12,19 @@ const Cart = () => {
   // Trae el itemCart creado en el contexto para poder usarlo.
 
   const {itemCart} = useContext (CartContext);
-
+  console.log(itemCart);
+    
   return (
-    <div className='styleShop'>
-        <ShoppingCartIcon />
-        <span>{itemCart.length}</span>
-    </div>
-  )
+    <>
+      <ShoppingCartIcon />
+
+      {itemCart.map(data =>{
+        return(
+          <span>{[data].length}</span>
+        )
+      })}
+    </>
+  );
 }
 
 export default Cart
