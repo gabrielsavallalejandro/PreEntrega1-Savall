@@ -10,6 +10,7 @@ import { db } from "../../firebaseConfig/firebaseConfig";
 import { Link } from "react-router-dom";
 
 import ItemDetailContainer from "../../components/ItemDetailContainer/ItemDetailContainer";
+import ItemCart from "../../components/ItemCart/ItemCart";
 
 
 // COMPONENTS
@@ -37,14 +38,17 @@ const CategoriesItem = () => {
 
   return (
     <div style={{height:'200px'}}>
-    <div 
+    <div
       style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr 1fr', gap: '20px', padding:'10px'}}
     >
       {categorieData.map((data) => {
         return(
-        <Link style={{textDecoration:'none'}} to={`/item-detail/${data.id}`}>
-          <ItemDetailContainer data={data} key={data.id} />
-        </Link>) 
+        <div key={data.id}>
+        <Link style={{textDecoration:'none'}} to={`/item-detail/${data.id}`} >
+          <ItemDetailContainer data={data}/>
+        </Link>
+        </div>
+        ) 
       })}
     </div>
     </div>

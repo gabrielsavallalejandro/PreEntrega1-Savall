@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 // Import Firebase
 
 import { db } from '../../firebaseConfig/firebaseConfig';
-import { collection, query, getDocs, where, documentId } from "firebase/firestore";
+import { collection, query, getDocs} from "firebase/firestore";
 
 // IMPORT CONTEXT
 
@@ -40,12 +40,6 @@ const ItemCart = () => {
   const removeToCart = () => {
 
   }
-
-
-
-
-
-
 
   return (
     <>
