@@ -37,9 +37,25 @@ const ItemCart = () => {
 
   // Funcion quita del carrito
 
+
   const removeToCart = () => {
 
+    const foundId = itemCart.find((element) => element.id === item.id);
+
+    console.log(foundId);
+  
+
+
+
+    /* for(const producto of itemCart){
+      console.log(producto.name);
+
+    }
+
+    console.log(itemCart); */
   }
+
+
 
   return (
     <>
